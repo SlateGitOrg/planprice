@@ -1,6 +1,7 @@
 package pricedata
 
 import (
+	"bytes"
 	"testing"
 
 	"github.com/archit2501/planprice/internal/pricing"
@@ -60,6 +61,22 @@ func TestEmbeddedSnapshotCoverage(t *testing.T) {
 		}
 		if got := p.UnitPrice().String(); got != c.want {
 			t.Errorf("%s = %s, want %s", c.q, got, c.want)
+		}
+	}
+}
+
+// BenchmarkLoadSnapshot measures decoding and validating the embedded
+// snapshot, the fixed start-up cost of every planprice invocation.
+func BenchmarkLoadSnapshot(b *testing.B) {
+	data, err := files.ReadFile(snapshotFile)
+	if err != nil {
+		b.Fatal(err)
+	}
+	b.SetBytes(int64(len(data)))
+	b.ReportAllocs()
+	for b.Loop() {
+		if _, err := pricing.Load(bytes.NewReader(data)); err != nil {
+			b.Fatal(err)
 		}
 	}
 }

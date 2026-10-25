@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"math/rand/v2"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -364,6 +365,35 @@ func BenchmarkEstimateHeadPlan(b *testing.B) {
 	for b.Loop() {
 		if _, err := Run("head", rs, o); err != nil {
 			b.Fatal(err)
+		}
+	}
+}
+
+// BenchmarkEstimate5000Instances prices a synthetic plan of 5,000 EC2
+// instances (each with a root volume) to show the engine scales linearly:
+// each component costs one hashed snapshot lookup.
+func BenchmarkEstimate5000Instances(b *testing.B) {
+	types := []string{"t3.micro", "t3.medium", "m6i.large", "m6i.xlarge", "c6i.large", "r6i.large", "m7g.large", "c7g.xlarge"}
+	rs := make([]tfplan.Resource, 0, 5000)
+	for i := 0; i < 5000; i++ {
+		attrs := map[string]any{
+			"instance_type":     types[i%len(types)],
+			"root_block_device": []any{map[string]any{"volume_type": "gp3", "volume_size": 20 + i%100}},
+		}
+		rs = append(rs, tfplan.Resource{
+			Address: "aws_instance.fleet[" + strconv.Itoa(i) + "]", Type: "aws_instance",
+			Region: "us-east-1", Action: tfplan.ActionCreate, Attrs: tfplan.NewAttrs(attrs, nil),
+		})
+	}
+	o := opts(b, nil)
+	b.ReportAllocs()
+	for b.Loop() {
+		est, err := Run("fleet", rs, o)
+		if err != nil {
+			b.Fatal(err)
+		}
+		if est.Summary.Unpriced != 0 {
+			b.Fatalf("unpriced components: %d", est.Summary.Unpriced)
 		}
 	}
 }
