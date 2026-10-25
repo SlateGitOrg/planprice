@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/archit2501/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/money"
 )
 
 // Attrs is a resource's attribute object together with Terraform's

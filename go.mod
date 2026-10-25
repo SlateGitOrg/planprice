@@ -1,4 +1,4 @@
-module github.com/archit2501/planprice
+module github.com/SlateGitOrg/planprice
 
 go 1.25.0
 

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"testing/quick"
 
-	"github.com/archit2501/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/money"
 )
 
 const fixture = `{

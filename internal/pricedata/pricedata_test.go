@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/pricing"
+	"github.com/SlateGitOrg/planprice/internal/pricing"
 )
 
 func TestEmbeddedSnapshotMatchesChecksum(t *testing.T) {

@@ -9,12 +9,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/estimate"
-	"github.com/archit2501/planprice/internal/mapper"
-	"github.com/archit2501/planprice/internal/money"
-	"github.com/archit2501/planprice/internal/pricedata"
-	"github.com/archit2501/planprice/internal/tfplan"
-	"github.com/archit2501/planprice/internal/usage"
+	"github.com/SlateGitOrg/planprice/internal/estimate"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/pricedata"
+	"github.com/SlateGitOrg/planprice/internal/tfplan"
+	"github.com/SlateGitOrg/planprice/internal/usage"
 )
 
 var update = flag.Bool("update", false, "rewrite golden files")

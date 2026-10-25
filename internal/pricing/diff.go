@@ -3,7 +3,7 @@ package pricing
 import (
 	"sort"
 
-	"github.com/archit2501/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/money"
 )
 
 // PriceChange is one difference between two snapshots.

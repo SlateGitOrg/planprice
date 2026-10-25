@@ -7,12 +7,12 @@ import (
 	"log/slog"
 	"strconv"
 
-	"github.com/archit2501/planprice/internal/estimate"
-	"github.com/archit2501/planprice/internal/mapper"
-	"github.com/archit2501/planprice/internal/money"
-	"github.com/archit2501/planprice/internal/render"
-	"github.com/archit2501/planprice/internal/tfplan"
-	"github.com/archit2501/planprice/internal/usage"
+	"github.com/SlateGitOrg/planprice/internal/estimate"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/render"
+	"github.com/SlateGitOrg/planprice/internal/tfplan"
+	"github.com/SlateGitOrg/planprice/internal/usage"
 )
 
 func runBreakdown(_ context.Context, args []string, stdout, stderr io.Writer) error {

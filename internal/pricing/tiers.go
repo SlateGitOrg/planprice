@@ -1,6 +1,6 @@
 package pricing
 
-import "github.com/archit2501/planprice/internal/money"
+import "github.com/SlateGitOrg/planprice/internal/money"
 
 // Cost prices qty units through the tier schedule: each tier charges its rate
 // for the part of qty that falls inside [Start, End). For a single-tier price

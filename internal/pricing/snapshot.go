@@ -19,7 +19,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/archit2501/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/money"
 )
 
 // SchemaVersion is the snapshot file format version this package reads.

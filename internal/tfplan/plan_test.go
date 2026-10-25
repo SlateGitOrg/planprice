@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/money"
+	"github.com/SlateGitOrg/planprice/internal/money"
 )
 
 func repoPlan(t *testing.T, name string) *Plan {

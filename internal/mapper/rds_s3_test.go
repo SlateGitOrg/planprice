@@ -3,7 +3,7 @@ package mapper_test
 import (
 	"testing"
 
-	"github.com/archit2501/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
 )
 
 // RDS prices (us-east-1 unless noted): PostgreSQL db.t3.medium Single-AZ

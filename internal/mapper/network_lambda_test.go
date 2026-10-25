@@ -4,7 +4,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
 )
 
 // NAT gateway $0.045/h and $0.045/GB (us-east-1). Load balancers per hour:

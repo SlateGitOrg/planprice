@@ -12,10 +12,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/archit2501/planprice/internal/mapper"
-	"github.com/archit2501/planprice/internal/pricedata"
-	"github.com/archit2501/planprice/internal/pricing"
-	"github.com/archit2501/planprice/internal/usage"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/pricedata"
+	"github.com/SlateGitOrg/planprice/internal/pricing"
+	"github.com/SlateGitOrg/planprice/internal/usage"
 )
 
 // Version is set at build time with -ldflags "-X .../cli.Version=...".

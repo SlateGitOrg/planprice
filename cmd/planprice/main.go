@@ -6,7 +6,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/archit2501/planprice/internal/cli"
+	"github.com/SlateGitOrg/planprice/internal/cli"
 )
 
 func main() {

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/mapper"
-	"github.com/archit2501/planprice/internal/usage"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/usage"
 )
 
 var (

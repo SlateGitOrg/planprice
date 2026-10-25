@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/archit2501/planprice/internal/pricegen"
+	"github.com/SlateGitOrg/planprice/internal/pricegen"
 )
 
 type regionList []string

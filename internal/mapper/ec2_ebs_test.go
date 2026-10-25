@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/mapper"
+	"github.com/SlateGitOrg/planprice/internal/mapper"
 )
 
 // Unit prices below are from the embedded snapshot (us-east-1 unless noted):

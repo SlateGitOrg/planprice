@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/archit2501/planprice/internal/estimate"
+	"github.com/SlateGitOrg/planprice/internal/estimate"
 )
 
 // mdEscape escapes characters that would break a Markdown table cell.

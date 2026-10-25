@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/archit2501/planprice/internal/estimate"
+	"github.com/SlateGitOrg/planprice/internal/estimate"
 )
 
 func breakdownTable(w io.Writer, est *estimate.Estimate) error {

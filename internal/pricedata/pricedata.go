@@ -11,7 +11,7 @@ import (
 	"embed"
 	"sync"
 
-	"github.com/archit2501/planprice/internal/pricing"
+	"github.com/SlateGitOrg/planprice/internal/pricing"
 )
 
 //go:embed aws-prices.json aws-prices.json.sha256

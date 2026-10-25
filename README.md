@@ -1,5 +1,7 @@
 # planprice
 
+[![CI](https://github.com/SlateGitOrg/planprice/actions/workflows/ci.yml/badge.svg)](https://github.com/SlateGitOrg/planprice/actions/workflows/ci.yml)
+
 **Monthly AWS cost estimates and cost diffs for Terraform plans, computed offline from a pinned AWS price snapshot, with Markdown output ready to post on a pull request.**
 
 ```console
@@ -15,8 +17,8 @@ breakdown or a resource-by-resource diff between two plans.
 
 It is for platform and FinOps engineers who want a cost signal in code review
 without sending plans to a SaaS, holding AWS credentials in CI, or trusting
-numbers that change between runs. It is a portfolio project, not a
-replacement for Infracost or the AWS Pricing Calculator; see
+numbers that change between runs. It is not a replacement for Infracost or
+the AWS Pricing Calculator; see
 [Limitations](#limitations).
 
 ## What it does
@@ -70,7 +72,7 @@ complexity: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 Requires Go 1.25+. No AWS credentials, network or Terraform needed to estimate.
 
 ```sh
-git clone <this repo> planprice && cd planprice
+git clone https://github.com/SlateGitOrg/planprice && cd planprice
 make build                      # -> bin/planprice
 make demo                       # offline end-to-end run on the bundled plans
 
@@ -288,9 +290,7 @@ The full list with trade-offs is in [DECISIONS.md](DECISIONS.md). The main ones:
 - **Test plans are fictional**: real Terraform output, but generated against
   a mock provider for invented infrastructure, and create-only. Update and
   delete handling is tested with a hand-written plan.
-- **CI workflow not yet executed**: `.github/workflows/ci.yml` mirrors
-  `make check` but has not run on GitHub (the repository has not been pushed).
-- Not used in production by anyone; no users.
+- Early-stage: no known production users.
 
 ## Roadmap
 

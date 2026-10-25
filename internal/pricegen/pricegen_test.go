@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/archit2501/planprice/internal/pricing"
+	"github.com/SlateGitOrg/planprice/internal/pricing"
 )
 
 func readFixture(t *testing.T, keep KeepFunc) *Offer {
