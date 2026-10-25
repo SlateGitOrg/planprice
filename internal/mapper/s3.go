@@ -100,8 +100,8 @@ func (s3BucketMapper) Map(r tfplan.Resource, u usage.Values) Result {
 			comps = append(comps, comp)
 		}
 		add("storage", "Storage", "GB-months", "storage_gb", c.storage, "Storage", money.Zero)
-		add("tier1", "PUT, COPY, POST, LIST requests", "1k requests", "monthly_tier_1_requests", c.tier1, "API Request", perThousand)
-		add("tier2", "GET and other requests", "1k requests", "monthly_tier_2_requests", c.tier2, "API Request", perThousand)
+		add("tier1", "PUT, COPY, POST, LIST requests", "thousand requests", "monthly_tier_1_requests", c.tier1, "API Request", perThousand)
+		add("tier2", "GET and other requests", "thousand requests", "monthly_tier_2_requests", c.tier2, "API Request", perThousand)
 		add("retrieval", "Data retrieval", "GB", "monthly_retrieval_gb", c.retrieval, "API Request", money.Zero)
 		res.Groups = append(res.Groups, Group{Key: c.name, Name: c.name, Components: comps})
 	}

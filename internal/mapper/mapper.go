@@ -54,7 +54,7 @@ type Component struct {
 	Name string
 	// Unit names Quantity's display unit. The quantity priced against the
 	// snapshot is Quantity * Scale (Scale zero means 1), which lets a
-	// component show "1M requests" while the price list charges per request.
+	// component show "million requests" while the price list charges per request.
 	Unit       string
 	Quantity   money.Decimal
 	Scale      money.Decimal

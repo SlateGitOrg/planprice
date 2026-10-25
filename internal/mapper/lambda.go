@@ -65,7 +65,7 @@ func (lambdaMapper) Map(r tfplan.Resource, u usage.Values) Result {
 	gbSeconds := seconds.Mul(memGB)
 
 	comps := []Component{
-		scaled(usageComponent("requests", "Requests", "1M requests", requests, haveRequests, "monthly_requests",
+		scaled(usageComponent("requests", "Requests", "million requests", requests, haveRequests, "monthly_requests",
 			query("AWSLambda", r.Region, "Serverless", "group", "AWS-Lambda-Requests"+suffix)), perMillion),
 		usageComponent("duration", fmt.Sprintf("Duration (%s MB, %s)", memMB, arch), "GB-seconds", gbSeconds,
 			haveRequests && haveDuration, "monthly_requests and request_duration_ms",

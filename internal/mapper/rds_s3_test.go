@@ -134,7 +134,7 @@ storage_classes:
 	costIs(t, rc, "intelligent_tiering/storage", "2.3")        // 100 * 0.023
 	totalIs(t, rc, "1576.901")
 	tier1 := component(t, rc, "standard/tier1")
-	if tier1.Unit != "1k requests" || tier1.Quantity.String() != "400" || tier1.UnitPrice.String() != "0.005" {
+	if tier1.Unit != "thousand requests" || tier1.Quantity.String() != "400" || tier1.UnitPrice.String() != "0.005" {
 		t.Errorf("request display scaling: %s %s at %s", tier1.Quantity, tier1.Unit, tier1.UnitPrice)
 	}
 	if hasComponent(rc, "standard/retrieval") {
