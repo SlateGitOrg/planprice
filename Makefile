@@ -1,9 +1,10 @@
 # planprice build gates. `make check` is what CI runs.
+# Tools are taken from PATH, falling back to user-local installs.
 export PATH := $(HOME)/.local/go/bin:$(HOME)/.local/bin:$(PATH)
 export GOFLAGS ?= -p=3
 
-GO            ?= go
-GOLANGCI_LINT ?= golangci-lint
+GO            ?= $(firstword $(shell command -v go 2>/dev/null) $(wildcard $(HOME)/.local/go/bin/go) go)
+GOLANGCI_LINT ?= $(firstword $(shell command -v golangci-lint 2>/dev/null) $(wildcard $(HOME)/.local/bin/golangci-lint) golangci-lint)
 COVER_MIN     ?= 80
 BIN           := bin/planprice
 
