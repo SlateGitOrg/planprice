@@ -266,7 +266,7 @@ func FuzzParse(f *testing.F) {
 	f.Add(sample)
 	f.Add("version: 1\n")
 	f.Add("version: 1\nresource_usage:\n  aws_a.b[*]: {x: 1}\n")
-	f.Fuzz(func(t *testing.T, s string) {
+	f.Fuzz(func(_ *testing.T, s string) {
 		file, err := Parse(strings.NewReader(s))
 		if err != nil {
 			return

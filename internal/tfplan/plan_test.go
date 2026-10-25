@@ -153,7 +153,7 @@ func TestBeforeViewAndActions(t *testing.T) {
 	if _, ok := m[`module.edge["eu"].aws_s3_bucket.inner`]; ok {
 		t.Error("created resource in before view")
 	}
-	if View(Before).String() != "before" || After.String() != "after" {
+	if Before.String() != "before" || After.String() != "after" {
 		t.Error("view names")
 	}
 }
